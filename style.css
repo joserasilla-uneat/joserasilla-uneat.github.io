@@ -1969,5 +1969,19 @@ img {
     max-width: none
 }
 
-#titulillo h2 { display:inline; }
-#maintitulo h1 { display:inline; font-size: 3em;  margin-top: 0.5em;}
+#titulillo h2 {
+    display: inline;
+}
+
+#maintitulo h1 {
+    display: inline;
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
+
+iframe {
+    width: 100%;
+    height: auto;
+    border: none;
+}
