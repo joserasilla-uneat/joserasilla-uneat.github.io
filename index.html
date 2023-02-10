@@ -34,7 +34,7 @@
 <script>
   function ajustarAltura() {
     var iframe = document.getElementById("rsIframe");
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    iframe.style.height = iframe.contentWindow.document.body.height + "px";
   }
   window.onload = ajustarAltura;
   window.onresize = ajustarAltura;
