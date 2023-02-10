@@ -16,7 +16,8 @@
     <h4 id="p-alignjustifycenter-inicio---tech----opinión----guías----blog----tools">
       <p align="justify"></p>
       <center> <a href="/index.html">INICIO</a> | <a href="/tech.html">TECH</a> | <a href="/opinion.html">OPINIÓN</a> |
-        <a href="/tuto.html">GUÍAS</a> | BLOG | <a href="/tools.html">TOOLS</a></center>
+        <a href="/tuto.html">GUÍAS</a> | BLOG | <a href="/tools.html">TOOLS</a>
+      </center>
       <p></p>
     </h4>
     <hr>
@@ -32,10 +33,12 @@
 </body>
 
 <script>
-  function ajustarAltura() {
-    var iframe = document.getElementById("rsIframe");
-    //iframe.style.height = iframe.contentWindow.document.body.height + "px";
-    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+  function ajustarAltura() { 
+    var iframes = document.querySelectorAll('iframe[id="myId"]');
+
+    for (var i = 0; i < iframes.length; i++) {
+      iframes[i].height = iframe.contentWindow.document.body.scrollHeight;
+    }
   }
   window.onload = ajustarAltura;
   window.onresize = ajustarAltura;

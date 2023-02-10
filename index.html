@@ -32,10 +32,12 @@
 </body>
 
 <script>
-  function ajustarAltura() {
-    var iframe = document.getElementById("rsIframe");
-    //iframe.style.height = iframe.contentWindow.document.body.height + "px";
-    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+  function ajustarAltura() { 
+    var iframes = document.querySelectorAll('iframe[id="myId"]');
+
+    for (var i = 0; i < iframes.length; i++) {
+      iframes[i].height = iframe.contentWindow.document.body.scrollHeight;
+    }
   }
   window.onload = ajustarAltura;
   window.onresize = ajustarAltura;
