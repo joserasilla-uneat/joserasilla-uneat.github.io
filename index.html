@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>index</title>
-  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body class="stackedit">
@@ -23,14 +23,25 @@
     <p align="justify"></p>
     <center> Un almacén de análisis, conocimientos, opiniones y reflexiones, publico, libre y accesible. </center>
     <p></p>
-    <center><iframe id="rsFrame" src="posts/1_rs.html" scrolling="no"></iframe></center>
-    <center><iframe id="rsFrame" src="posts/0_rs.html" scrolling="no"></iframe></center>
+    <center><iframe id="rsIframe" src="posts/1_rs.html" scrolling="no"></iframe></center>
+    <center><iframe id="rsIframe" src="posts/0_rs.html" scrolling="no"></iframe></center>
 
 
 
   </div>
 </body>
 
-<script src="/styles/functions.js"></script>
+<script>
+  function ajustarAltura() { 
+    var iframes = document.querySelectorAll('iframe[id="myId"]');
+
+    iframes.forEach(function(iframe) {
+      iframe.height = iframe.contentWindow.document.body.scrollHeight;
+    });
+
+  }
+  window.onload = ajustarAltura;
+  window.onresize = ajustarAltura;
+</script>
 
 </html>
