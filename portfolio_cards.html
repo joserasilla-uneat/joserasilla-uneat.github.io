@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#filtro-tipo, #filtro-entorno").change(function () {
+                var tipo = $("#filtro-tipo").val();
+                var entorno = $("#filtro-entorno").val();
+                if (tipo == "" && entorno == "") {
+                    $(".proyecto").show();
+                } else {
+                    $(".proyecto").hide();
+                    $("." + tipo + "." + entorno).show();
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <h2>Librería de proyectos</h2>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="filtro-tipo">Filtrar por tipo:</label>
+                    <select class="form-control" id="filtro-tipo">
+                        <option value="">Todos</option>
+                        <option value="diseno-digital">Diseño digital</option>
+                        <option value="diseno-juego">Diseño de juego</option>
+                        <option value="diseno-interaccion">Diseño de interacción</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="filtro-entorno">Filtrar por entorno:</label>
+                    <select class="form-control" id="filtro-entorno">
+                        <option value="">Todos</option>
+                        <option value="universidad">Universidad</option>
+                        <option value="personal">Personal</option>
+                        <option value="trabajo">Trabajo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="proyectos">
+            <div class="col-md-4 proyecto diseno-digital universidad">
+                <div class="card">
+                    <img src="https://via.placeholder.com/250x350.png?text=Proyecto+1" class="card-img-top"
+                        alt="Proyecto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto 1</h5>
+                        <p class="card-text">Descripción del proyecto 1.</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 proyecto diseno-juego personal">
+                <div class="card">
+                    <img src="https://via.placeholder.com/250x350.png?text=Proyecto+2" class="card-img-top"
+                        alt="Proyecto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto 2</h5>
+                        <p class="card-text">Descripción del proyecto 2.</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 proyecto diseno-interaccion trabajo">
+                <div class="card">
+                    <img src="https://via.placeholder.com/250x350.png?text=Proyecto+3" class="card-img-top"
+                        alt="Proyecto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto 3</h5>
+                        <p class="card-text">Descripción del proyecto 3.</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
