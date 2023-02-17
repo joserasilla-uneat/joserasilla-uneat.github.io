@@ -10,3 +10,16 @@ iframes.forEach(function(iframe) {
     iframe.style.width = width + 'px';
   });
 });
+
+var pfCardsFrames = document.querySelectorAll('iframe[id="pfCards"]');
+
+pfCardsFrames.forEach(function(pfCard) {
+  pfCard.addEventListener('load', function() {
+
+    var height = pfCard.contentWindow.document.body.scrollHeight;
+    var width = pfCard.contentWindow.document.body.width;
+
+    pfCard.style.height = height + 'px';
+    pfCard.style.width = width + 'px';
+  });
+});
